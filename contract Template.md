@@ -21,12 +21,15 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ###Use case description
 
-<b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
-Primary actor: Employee from travel agency.
-Precondition: Desktop application.
-Success scenario: 
-Special requirements: No special requirements.
+####Use case 1
 
+<b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
+<b>Primary actor:</b> Employee from travel agency.
+<b>Precondition:</b> Desktop application.
+<b>Success scenario:</b> 
+<b>Special requirements:</b> No special requirements.
+
+####Use case 2
 
 Name: The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
 Primary actor: Employee from travel agency.
@@ -34,6 +37,7 @@ Precondition: Desktop application.
 Success scenario: The booking is successful when all persons has been booked. 
 Special requirements: The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included. An error message should be returned, if the seats are not available anymore.
 
+####Use case 3
 
 Name: See a booking, providing a PNR from the booking.
 Primary actor: Employee from travel agency.
@@ -41,8 +45,7 @@ Precondition: Desktop application.
 Success scenario: Returns the booking.
 Special requirements: 
 
-
-
+####Use case 4
 
 Name: Cancel a booking, providing a PNR from the booking.
 Primary actor: Employee from travel agency.
