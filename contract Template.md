@@ -3,6 +3,8 @@
 
 ##Introduction
 
+Several flight carriers have come together to create an online booking system. The project name is Sebastian. Access to this GDS (Global Distribution System) will be done through a web service (used by third party solutions) and a desktop application (meant for employees in travel agencies). Sebastian provides a service to view schedules* and handle bookings*.   
+
 ##Vision
 
 ###General describtion of system
