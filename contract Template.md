@@ -23,15 +23,15 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ####Use case 1
 
-...<b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
+> <b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
 
-...<b>Primary actor:</b> Employee from travel agency.
+> <b>Primary actor:</b> Employee from travel agency.
 
-...<b>Precondition:</b> Desktop application.
+> <b>Precondition:</b> Desktop application.
 
-...<b>Success scenario:</b> 
+> <b>Success scenario:</b> 
 
-...<b>Special requirements:</b> No special requirements.
+> <b>Special requirements:</b> No special requirements.
 
 ####Use case 2
 
