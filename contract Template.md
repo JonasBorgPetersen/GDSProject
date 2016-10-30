@@ -17,6 +17,8 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ##Use Case Model
 
+![alt tag](https://github.com/Englund0110/GDSProject/blob/master/Use%20Case%20Model.jpg)
+
 ###Use case diagram
 
 ###Use case description
@@ -61,7 +63,7 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 > <b>Precondition:</b> Desktop application.
 
-> <b>Success scenario:</b> Cancels the booking.
+> <b>Success scenario:</b> The booking has been canceled.
 
 
 
