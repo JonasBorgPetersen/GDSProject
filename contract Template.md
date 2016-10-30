@@ -75,7 +75,40 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ###Class diagram
 
+![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Class%20Diagram.PNG)
+
 ###Description of domain model
+
+> <b>Schedule:</b> Contains all flights from and to a specified date
+
+> <b>Flight:</b> Contains information about a flight
+
+> <b>Booking:</b> Is attached to a specific flight, and includes a single or multiple passengers
+
+> <b>Passenger:</b> Contains basic passenger identifiers (name and id)
+
+> <b>TicketType:</b> Enum, to define the possible ticket types (of a booking)
+
+###Constraints
+
+####Flight:
+> <b>CarrierCode:</b> Two letter value (min & max)
+
+> <b>AirportDeparture:</b> Three letter value (min & max)
+
+> <b>AirportArrival:</b> Three letter value (min & max)
+
+####Booking:
+> <b>FrequentFlyterNumber:</b> Nullable, passengers may not have this attribute
+
+> <b>Passengers:</b> Minimum 1 passenger, maximum 9
+
+####Passenger:
+> <b>PNR:</b> A combination of numbers and letters
+* Always contains six alphanumeric characters
+* First character can NOT be a number
+
+> <b>FullName:</b> Full name (from passport) in capital letters
 
 ##Non-functional requirements
 
