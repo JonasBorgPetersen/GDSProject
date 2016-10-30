@@ -29,24 +29,29 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 > <b>Precondition:</b> Desktop application.
 
-> <b>Success scenario:</b> 
-
 > <b>Special requirements:</b> No special requirements.
 
 ####Use case 2
 
 > <b>Name:</b> The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
+
 > <b>Primary actor:</b> Employee from travel agency.
+
 > <b>Precondition:</b> Desktop application.
+
 > <b>Success scenario:</b> The booking is successful when all persons has been booked. 
+
 > <b>Special requirements:</b> The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included. An error message should be returned, if the seats are not available anymore.
 
 ####Use case 3
 
-> <b>Name: See a booking, providing a PNR from the booking.
-> <b>Primary actor: Employee from travel agency.
-> <b>Precondition: Desktop application.
-> <b>Success scenario: Returns the booking.
+> <b>Name:</b> See a booking, providing a PNR from the booking.
+
+> <b>Primary actor:</b> Employee from travel agency.
+
+> <b>Precondition:</b> Desktop application.
+
+> <b>Success scenario:</b> Returns the booking.
 
 ####Use case 4
 
