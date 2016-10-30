@@ -17,9 +17,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ##Use Case Model
 
-![alt tag](https://github.com/Englund0110/GDSProject/blob/master/Use%20Case%20Model.jpg)
-
 ###Use case diagram
+
+![USe Case Diagram](https://github.com/Englund0110/GDSProject/blob/master/Use%20Case%20Model.jpg)
 
 ###Use case description
 
