@@ -27,45 +27,17 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 > <b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
 
-> <b>Primary actor:</b> Employee from travel agency.
-
-> <b>Precondition:</b> Desktop application.
-
-> <b>Special requirements:</b> No special requirements.
-
 ####Use case 2
 
 > <b>Name:</b> The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
-
-> <b>Primary actor:</b> Employee from travel agency.
-
-> <b>Precondition:</b> Desktop application.
-
-> <b>Success scenario:</b> The booking is successful when all persons has been booked. 
-
-> <b>Special requirements:</b> The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included. An error message should be returned, if the seats are not available anymore.
 
 ####Use case 3
 
 > <b>Name:</b> See a booking, providing a PNR from the booking.
 
-> <b>Primary actor:</b> Employee from travel agency.
-
-> <b>Precondition:</b> Desktop application.
-
-> <b>Success scenario:</b> Returns the booking.
-
 ####Use case 4
 
 > <b>Name:</b> Cancel a booking, providing a PNR from the booking.
-
-> <b>Primary actor:</b> Employee from travel agency.
-
-> <b>Precondition:</b> Desktop application.
-
-> <b>Success scenario:</b> The booking has been canceled.
-
-
 
 ###Actor descriptions
 
@@ -110,6 +82,16 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 > <b>FullName:</b> Full name (from passport) in capital letters
 
-##Non-functional requirements
-
 ##Fully dressed use case
+
+> <b>Name:</b> The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
+
+> <b>Primary actor:</b> Employee from travel agency.
+
+> <b>Precondition:</b> Should be no more than 9 persons on each booking
+
+> <b>Success scenario:</b> An message should say, that all persons has been booked on the flight 
+
+> <b>Error scenario:</b> If no seats available, an error message should appear. 
+
+> <b>Special requirements:</b> The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included.
