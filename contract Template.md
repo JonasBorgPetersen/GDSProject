@@ -35,30 +35,31 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ####Use case 2
 
-Name: The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
-Primary actor: Employee from travel agency.
-Precondition: Desktop application.
-Success scenario: The booking is successful when all persons has been booked. 
-Special requirements: The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included. An error message should be returned, if the seats are not available anymore.
+> <b>Name:</b> The system should be able to make a booking for up to 9 persons, between to airports on a given day. The booking can even be a one-way or a round-trip. 
+> <b>Primary actor:</b> Employee from travel agency.
+> <b>Precondition:</b> Desktop application.
+> <b>Success scenario:</b> The booking is successful when all persons has been booked. 
+> <b>Special requirements:</b> The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included. An error message should be returned, if the seats are not available anymore.
 
 ####Use case 3
 
-Name: See a booking, providing a PNR from the booking.
-Primary actor: Employee from travel agency.
-Precondition: Desktop application.
-Success scenario: Returns the booking.
-Special requirements: 
+> <b>Name: See a booking, providing a PNR from the booking.
+> <b>Primary actor: Employee from travel agency.
+> <b>Precondition: Desktop application.
+> <b>Success scenario: Returns the booking.
 
 ####Use case 4
 
-Name: Cancel a booking, providing a PNR from the booking.
-Primary actor: Employee from travel agency.
-Precondition: Desktop application.
-Success scenario: Cancels the booking.
-Special requirements: 
+> <b>Name:</b> Cancel a booking, providing a PNR from the booking.
+> <b>Primary actor:</b> Employee from travel agency.
+> <b>Precondition:</b> Desktop application.
+> <b>Success scenario:</b> Cancels the booking.
+
 
 
 ###Actor descriptions
+
+> <b>Employee:</b> The employee is the employees from the travel agencies.
 
 ##Domain Model
 
