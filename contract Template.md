@@ -56,8 +56,11 @@ The purpose of the system is to make it easier for several flight carriers and t
 ####Use case 4
 
 > <b>Name:</b> Cancel a booking, providing a PNR from the booking.
+
 > <b>Primary actor:</b> Employee from travel agency.
+
 > <b>Precondition:</b> Desktop application.
+
 > <b>Success scenario:</b> Cancels the booking.
 
 
