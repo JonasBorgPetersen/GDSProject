@@ -25,7 +25,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ####Use case 1
 
-> <b>Name:</b> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
+> <b>Name:</b> Show time schedule
+
+> The system should show a time schedule with arrival and departure time, with information about the carrier and number of free seats, between two airports on a given date.
 
 ####Use case 2
 
