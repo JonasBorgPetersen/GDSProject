@@ -114,7 +114,7 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ###Package diagram
 
-(insert)
+![Package Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Package.png)
 
 The package diagram is showing the structure of the diagram, and which packages it is containing. 
 
@@ -126,13 +126,15 @@ The package diagram is showing the structure of the diagram, and which packages 
 
 ###Component diagram
 
-(insert)
+![Component Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Component%20diagram.png)
 
 The component diagram shows which systems is using the repository, and which methods you can call. It is possible to call the four main methods through a web service. The desktop and 3-party solution is calling the repository, who has handling all the bookings. 
 
 ###Architecture structure
 
 (insert)
+https://github.com/Englund0110/GDSProject/tree/master/Documents
+![Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/seq2.png)
 
 ###Implementation
 
