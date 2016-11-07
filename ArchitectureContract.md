@@ -102,9 +102,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 1. Encryption of personal data on passengers (e.g. credit card information)
 
-⋅⋅* Database encryption in case of breach
+* Database encryption in case of breach
 
-⋅⋅* HTTPS for secure communication
+* HTTPS for secure communication
 
 4. Backups of database data (bookings, flights etc.)
 
@@ -113,6 +113,76 @@ The purpose of the system is to make it easier for several flight carriers and t
 6. The booking system should be able to handle fluctuating number of users (heavy load in high season)
 
 7. Documentation for use of web service for 3rd party users
+
+##Package diagram
+
+(insert)
+
+The package diagram is showing the structure of the diagram, and which packages it is containing. 
+
+> <b>GUI:</b> The user interface made as an application, or a browser based solution used by customers.
+
+> <b>Domain:</b> Domain is handling all requests, and can be accessed by using the interface. 
+
+> <b>Technical Service:</b> Is handling database related calls through a DBFacade.
+
+##Component diagram
+
+(insert)
+
+The component diagram shows which systems is using the repository, and which methods you can call. It is possible to call the four main methods through a web service. The desktop and 3-party solution is calling the repository, who has handling all the bookings. 
+
+##Architecture structure
+
+(insert)
+
+##Implementation
+
+<b>Use case:</b> Create Booking
+<b>Main Scenario:</b>
+
+1.1 Get flight schedule between two airports
+
+1.2 Check if flight have any seats left
+
+1.3 Get response if booking is successful
+
+
+This interface provides the methods for creating a successful booking. 
+
+```c#
+interface ISebastian
+    {
+        /// <summary>
+        /// Returns a JSON array of flights between the specified dates
+        /// </summary>
+        /// <param name="dateFrom"></param>
+        /// <param name="dateTo"></param>
+        /// <returns>JSON response</returns>
+        string GetScheduledFlights(DateTime dateFrom, DateTime dateTo);
+
+
+        /// <summary>
+        /// Returns a JSON object of a flight and its bookings 
+        /// </summary>
+        /// <param name="flightId"></param>
+        /// <returns></returns>
+        string GetFlightBookings(string flightId);
+
+
+        /// <summary>
+        /// Returns a JSON response with information about the success of the request
+        /// </summary>
+        /// <param name="flight"></param>
+        /// <param name="booking"></param>
+        /// <returns>JSON response</returns>
+        string CreateBooking(Flight flight, Booking booking);
+    }
+```
+
+##Persistence
+
+##E/R Diagram
 
 
 
