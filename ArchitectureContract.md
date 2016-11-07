@@ -98,7 +98,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 > <b>Special requirements:</b> The booking is atomic, and can only be successful, if all persons can be booked, and all legs are included.
 
-##Non-functional Requirements
+##Architectural Requirements
+
+###Non-functional Requirements
 
 1. Encryption of personal data on passengers (e.g. credit card information)
 
@@ -114,7 +116,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 7. Documentation for use of web service for 3rd party users
 
-##Package diagram
+##System Architecture
+
+###Package diagram
 
 (insert)
 
@@ -126,19 +130,20 @@ The package diagram is showing the structure of the diagram, and which packages 
 
 > <b>Technical Service:</b> Is handling database related calls through a DBFacade.
 
-##Component diagram
+###Component diagram
 
 (insert)
 
 The component diagram shows which systems is using the repository, and which methods you can call. It is possible to call the four main methods through a web service. The desktop and 3-party solution is calling the repository, who has handling all the bookings. 
 
-##Architecture structure
+###Architecture structure
 
 (insert)
 
-##Implementation
+###Implementation
 
 <b>Use case:</b> Create Booking
+
 <b>Main Scenario:</b>
 
 1.1 Get flight schedule between two airports
@@ -180,9 +185,128 @@ interface ISebastian
     }
 ```
 
-##Persistence
 
-##E/R Diagram
+
+This is how the JSON object could look like, when creating a new booking. 
+
+
+> <b>(GetFlightBookings)</b>
+
+```JSON
+"Flight": [
+    {
+      "AirportDeparture": "CPH",
+      "AirportArrival": "HRG",
+      "DateDeparture": "2016/12/11 12:20",
+      "DateArrival": "2016/12/11 18:30",
+      "SeatCount": 148,
+      "TicketPrice": 1200.00,
+      "CarrierCode": "SAS",
+      "Bookings": [
+        {
+          "Passengers": [
+            {
+              "PNR": "A72645263ER",
+              "FullName": "JENS ANDERSEN"
+            },
+            {
+              "PNR": "A726453432ER",
+              "FullName": "KAREN ANDERSEN"
+            },
+            {
+              "PNR": "A788853432ER",
+              "FullName": "AUGUST ANDERSEN"
+            }
+          ],
+          "TicketType": "RoundTrip",
+          "CreditCardNumber": "1234567890",
+          "FrequentFlyerNumber": "A27E"
+        },
+        {       
+"Passengers": [
+            {
+              "PNR": "A72645263EUO",
+              "FullName": "JENS PETERSEN"
+            },
+            {
+              "PNR": "A726453432EO",
+              "FullName": "KAREN PETERSEN"
+            },
+            {
+              "PNR": "A788853432EB",
+              "FullName": "AUGUST PETERSEN"
+            }
+          ],
+          "TicketType": "RoundTrip",
+          "CreditCardNumber": "1234567890",
+          "FrequentFlyerNumber": "A27E"
+        }
+      ]
+    }
+  ]
+  
+```
+
+> <b>(GetFlightBookings)</b>
+
+```JSON
+ "Schedule": {
+    "DateFrom": "2016/12/09",
+    "DateTo": "2016/12/12",
+    "Flights": [
+      {
+        "FlightId": "BA124-1542AE",
+        "AirportDeparture": "CPH",
+        "AirportArrival": "HRG",
+        "DateDeparture": "2016/12/11 12:20",
+        "DateArrival": "2016/12/11 18:30",
+        "SeatCount": 148,
+        "TicketPrice": 1200.00,
+        "CarrierCode": "SAS",
+        "Bookings": null
+      },
+      {
+        "FlightId": "BA124-3333AI",
+        "AirportDeparture": "AAL",
+        "AirportArrival": "CPH",
+        "DateDeparture": "2016/12/09 12:20",
+        "DateArrival": "2016/12/09 14:00",
+        "SeatCount": 148,
+        "TicketPrice": 800.00,
+        "CarrierCode": "SAS",
+        "Bookings": null
+      },
+      {
+        "FlightId": "BA129-3445AI",
+        "AirportDeparture": "CPH",
+        "AirportArrival": "LND",
+        "DateDeparture": "2016/12/10 12:20",
+        "DateArrival": "2016/12/10 15:30",
+        "SeatCount": 148,
+        "TicketPrice": 1200.00,
+        "CarrierCode": "SAS",
+        "Bookings": null
+      }
+    ]
+  }
+
+```
+
+
+> <b>(GetFlightBookings)</b>
+
+```JSON
+ "Response": "Booking successfully added to flight 'BA124-3333AI'"
+
+```
+
+###Persistence
+
+The data storage will be handled in a relational database. Due to the different constraint-requirements, it makes sense to implant these constraints on a data layer-level - which relational databases allows. An alternative would be, to use NoSQL/document-style database. This database type allows for faster performance and more dynamic storage structure, however, these advantages are not sufficient to choose a document database above the relational kind. 
+
+###E/R Diagram
+
+
 
 
 
