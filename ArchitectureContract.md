@@ -132,7 +132,6 @@ The component diagram shows which systems is using the repository, and which met
 
 ###Architecture structure
 
-(insert)
 https://github.com/Englund0110/GDSProject/tree/master/Documents
 ![Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/seq2.png)
 
