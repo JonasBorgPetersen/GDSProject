@@ -103,18 +103,12 @@ The purpose of the system is to make it easier for several flight carriers and t
 ###Non-functional Requirements
 
 1. Encryption of personal data on passengers (e.g. credit card information)
-
-* Database encryption in case of breach
-
-* HTTPS for secure communication
-
-4. Backups of database data (bookings, flights etc.)
-
-5. It should not take any more than five minutes to create a booking 
-
-6. The booking system should be able to handle fluctuating number of users (heavy load in high season)
-
-7. Documentation for use of web service for 3rd party users
+..* Database encryption in case of breach
+..* HTTPS for secure communication
+2. Backups of database data (bookings, flights etc.)
+3. It should not take any more than five minutes to create a booking 
+4. The booking system should be able to handle fluctuating number of users (heavy load in high season)
+5. Documentation for use of web service for 3rd party users
 
 ##System Architecture
 
