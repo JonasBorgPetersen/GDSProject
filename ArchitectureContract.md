@@ -102,9 +102,9 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 1. Encryption of personal data on passengers (e.g. credit card information)
 
-..* Database encryption in case of breach
+⋅⋅* Database encryption in case of breach
 
-..* HTTPS for secure communication
+⋅⋅* HTTPS for secure communication
 
 4. Backups of database data (bookings, flights etc.)
 
