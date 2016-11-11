@@ -15,6 +15,16 @@ Sebastian is a Global Distribution System, that is used to handle bookings, i.e.
 
 The purpose of the system is to make it easier for several flight carriers and travel agencies to make reservations through an online solution. The solution will be in form of a web-service, that is meant for third-party solutions, and then a desktop solution for the employees. The system can handle many flight reservations, and can be extended with more features like seat numbers.
 
+###Glossary
+
+> <b>IATA</b> Carrier Code: A two-letter code that identifies a carrier (e.g. BA = British, RA = Ryan Air). 
+
+> <b>IATA Airport Code:</b> A three-letter code that identifies an airport (e.g. CPH = Copenhagen Airport, HRG = Hurghada Airport).
+
+> <b>Leg:</b> A flight leg is a flight from one point to another point (e.g. CPH -> HRG).
+
+> <b>PNR (Passenger Name Record):</b> A unique combination of numbers and letters, that identifies a passenger. 
+
 ##Use Case Model
 
 ###Use case diagram
