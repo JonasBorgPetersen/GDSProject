@@ -47,6 +47,10 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ##Domain Model
 
+###Domain Model
+
+![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Domain%20Model.png)
+
 ###Class diagram
 
 ![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Class%20Diagram.PNG)
