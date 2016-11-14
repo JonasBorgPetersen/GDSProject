@@ -333,7 +333,7 @@ Sequence diagram for the Create Booking use case.
 
 ###State Diagram
 
-This is a State Diagram for the Create Booking use case. 
+This is a state diagram for the Create Booking use case. 
 
 ![State Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/State%20Diagram.png)
 
