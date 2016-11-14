@@ -59,11 +59,11 @@ The purpose of the system is to make it easier for several flight carriers and t
 
 ###Domain Model
 
-![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Domain%20Model.png)
+![Domain Model](https://github.com/Englund0110/GDSProject/blob/master/Documents/Domain%20Model.png)
 
 ###Class diagram
 
-![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Class%20Diagram.PNG)
+![Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Class%20Diagram%20(updated).png)
 
 ###Description of domain model
 
@@ -321,11 +321,11 @@ The data storage will be handled in a relational database. Due to the different 
 
 ###Design Class Diagram
 
-![Design Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+![Design Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Class%20Diagram%20-%20For%20Creating%20a%20Booking%20FINAL.png)
 
 ###Design Sequence Diagram
 
-![Design Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+![Design Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Sequence%20Diagram%20-%20For%20Creating%20a%20Booking.png)
 
 ###State Diagram
 
