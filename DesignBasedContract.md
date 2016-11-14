@@ -329,11 +329,11 @@ The data storage will be handled in a relational database. Due to the different 
 
 ###State Diagram
 
-![State Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+![State Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/State%20Diagram.png)
 
 ###Relational Model
 
-![Relational Model](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+![Relational Model](https://github.com/Englund0110/GDSProject/blob/master/Documents/Relationel%20Model.png)
 
 
 
