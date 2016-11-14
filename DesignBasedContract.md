@@ -319,19 +319,27 @@ The data storage will be handled in a relational database. Due to the different 
 
 ##Design
 
+The use case we want you to implement, is the use case Create Booking, that has been explained ealiere in this contract. 
+
 ###Design Class Diagram
 
 ![Design Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Class%20Diagram%20-%20For%20Creating%20a%20Booking%20FINAL.png)
 
 ###Design Sequence Diagram
 
+Sequence diagram for the Create Booking use case.
+
 ![Design Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/Sequence%20Diagram%20-%20For%20Creating%20a%20Booking.png)
 
 ###State Diagram
 
+This is a State Diagram for the Create Booking use case. 
+
 ![State Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/State%20Diagram.png)
 
 ###Relational Model
+
+This is the Relationel Model with table names, data types and primary (PK) and foreign keys (FK).
 
 ![Relational Model](https://github.com/Englund0110/GDSProject/blob/master/Documents/Relationel%20Model.png)
 
