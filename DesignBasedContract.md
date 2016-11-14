@@ -317,3 +317,23 @@ The data storage will be handled in a relational database. Due to the different 
 
 ![Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
 
+##Design
+
+###Design Class Diagram
+
+![Design Class Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+
+###Design Sequence Diagram
+
+![Design Sequence Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+
+###State Diagram
+
+![State Diagram](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+
+###Relational Model
+
+![Relational Model](https://github.com/Englund0110/GDSProject/blob/master/Documents/ER_model_2_not_transparent.png)
+
+
+
