@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package faradayimpl;
+package UI;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.TextField;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
 import javafx.event.ActionEvent;
@@ -16,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javax.swing.JApplet;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -75,6 +77,7 @@ public class FaradayImpl extends JApplet {
     }
     
     private void createScene() {
+        
         Button btn = new Button();
         btn.setText("Say 'Hello World'");
         btn.setOnAction(new EventHandler<ActionEvent>() {
