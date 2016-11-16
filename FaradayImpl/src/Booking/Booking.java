@@ -18,8 +18,18 @@ public class Booking {
     public Time pickUpTime;
     public Date deliveryDate;
     public Time deliveryTime;
+    public String licensePlateNumber;
     
     public Booking(){}
+    
+    public Booking(int id, Date pickUpDate, Time pickUpTime, Date deliveryDate, Time deliveryTime, String licensePlateNumber){
+        this.id = id;
+        this.pickUpDate = pickUpDate;
+        this.pickUpTime = pickUpTime;
+        this.deliveryDate = deliveryDate;
+        this.deliveryTime = deliveryTime;
+        this.licensePlateNumber = licensePlateNumber;
+    }
 
     public int getId() {
         return id;

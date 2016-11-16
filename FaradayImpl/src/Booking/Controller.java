@@ -5,7 +5,9 @@
  */
 package Booking;
 
+import java.io.IOException;
 import java.sql.Time;
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,7 +17,7 @@ import java.util.List;
  */
 public class Controller {
 
-    static List<RentalCar> checkCars(String pickupCity, String deliverCity, Date pickUpDate, Date deliveryDate, Time pickUpTime, Time deliveryTime) {
+    static List<RentalCar> checkCars(String pickupCity, String deliverCity, Date pickUpDate, Date deliveryDate, Time pickUpTime, Time deliveryTime) throws IOException, ParseException {
         return DataAccess.DBFacade.checkCars(pickupCity,deliverCity,pickUpDate,deliveryDate,pickUpTime,deliveryTime);
     }
 

@@ -12,9 +12,15 @@ package Booking;
 public class RentalCar {
     public int id;
     public String licenseplateNumber;
-    public typeName typeName;
+//    public typeName typeName;
     
     public RentalCar(){}
+
+    public RentalCar(int id, String licenseplateNumber) {
+        this.id = id;
+        this.licenseplateNumber = licenseplateNumber;
+//        this.typeName = typeName;
+    }
 
     public int getId() {
         return id;
@@ -24,9 +30,9 @@ public class RentalCar {
         return licenseplateNumber;
     }
 
-    public typeName getTypeName() {
-        return typeName;
-    }
+//    public typeName getTypeName() {
+//        return typeName;
+//    }
 
     public void setId(int id) {
         this.id = id;
@@ -36,9 +42,9 @@ public class RentalCar {
         this.licenseplateNumber = licenseplateNumber;
     }
 
-    public void setTypeName(typeName typeName) {
-        this.typeName = typeName;
-    }
+//    public void setTypeName(typeName typeName) {
+//        this.typeName = typeName;
+//    }
 
     
     
