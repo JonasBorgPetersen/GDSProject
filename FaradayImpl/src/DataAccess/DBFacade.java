@@ -9,6 +9,9 @@ import Booking.RentalCar;
 import java.sql.Time;
 import java.util.Date;
 import java.util.List;
+import com.google.gson.Gson;
+
+
 
 /**
  *
@@ -19,6 +22,10 @@ public class DBFacade {
     public static List<RentalCar> checkCars(String pickupCity, String deliverCity, Date pickUpDate, Date deliveryDate, Time pickUpTime, Time deliveryTime) {
         
         //query database and return result
+        Gson gson = new Gson();
+        
+        
+        
         
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
