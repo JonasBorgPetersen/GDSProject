@@ -5,6 +5,7 @@
  */
 
 import Booking.BookingFacade;
+import DataAccess.DBFacade;
 import java.io.IOException;
 import java.sql.Time;
 import java.text.DateFormat;
@@ -53,7 +54,7 @@ public class BookingFacadeTest {
     // @Test
     // public void hello() {}
     
-    //@Ignore
+    @Ignore
     @Test
     public void GetRentalCarsTest() throws IOException, ParseException {
         DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
@@ -97,5 +98,24 @@ public class BookingFacadeTest {
 //
 //        System.out.println("newDate: " + Time.parse(stringTime));
 
+    }
+    
+    @Test
+    public void TestMakeBooking() throws IOException{
+        BookingFacade bookingFacade = new BookingFacade();
+        
+        //valid 
+        int id = bookingFacade.makeBooking(new Date(2016, 11, 17), new Date(2016, 11, 20), new Time(12, 50, 0), new Time(16, 30, 0), 0, 0, 0, "123543dsf", "Jonas Borg Petersen");
+        
+        //valid 
+        //int id = bookingFacade.makeBooking(new Date(2016, 11, 17), new Date(2016, 11, 17), new Time(12, 50, 0), new Time(16, 30, 0), 0, 0, 0, "123543dsf", "Jonas Borg Petersen");
+        
+        //invalid *date
+        //int id = bookingFacade.makeBooking(new Date(2016, 11, 17), new Date(2016, 12, 17), new Time(12, 50, 0), new Time(16, 30, 0), 0, 0, 0, "123543dsf", "Jonas Borg Petersen");
+        
+        //invalid *time
+        //int id = bookingFacade.makeBooking(new Date(2016, 11, 17), new Date(2016, 11, 17), new Time(12, 50, 0), new Time(11, 30, 0), 0, 0, 0, "123543dsf", "Jonas Borg Petersen");
+        
+        assertNotEquals("Test new booking", id, -1);
     }
 }

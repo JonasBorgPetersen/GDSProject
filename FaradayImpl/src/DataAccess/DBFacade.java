@@ -2,19 +2,28 @@ package DataAccess;
 
 import Booking.Booking;
 import Booking.RentalCar;
+import com.google.gson.Gson;
 import java.sql.Time;
 import java.util.Date;
-import java.util.List;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
+import java.util.List;
 
 public class DBFacade {
+
+    private static Gson gson = new Gson();
 
     public static List<RentalCar> checkCars(String pickupCity, String deliverCity, Date pickUpDate, Date deliveryDate, Time pickUpTime, Time deliveryTime) throws IOException, ParseException {
 
@@ -54,8 +63,7 @@ public class DBFacade {
                 if (rc.licenseplateNumber.trim().equals(booking.licensePlateNumber.trim())) {
                     if (pickUpDate.after(booking.pickUpDate) && pickUpDate.before(booking.deliveryDate)) {
                         i.remove();
-                    }
-                    else if (pickUpDate.before(booking.pickUpDate) && deliveryDate.after(booking.deliveryDate)) {
+                    } else if (pickUpDate.before(booking.pickUpDate) && deliveryDate.after(booking.deliveryDate)) {
                         i.remove();
                     }
                 }
@@ -66,10 +74,48 @@ public class DBFacade {
         return rentalCars;
     }
 
-    public static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) {
+    public static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) throws IOException {
 
-        //query database and return result
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Booking> bookings;
+        int id = -1;
+
+        try {
+            bookings = new ArrayList<Booking>(Arrays.asList(gson.fromJson(new FileReader("C:\\Users\\Jonas Borg Petersen\\Documents\\bookings.json"), Booking[].class)));
+
+        } catch (Exception e) {
+            bookings = new ArrayList<Booking>();
+        }
+
+        id = (int) (Math.random() * 100);
+
+        Booking b = 
+            new Booking(
+                    id,
+                    pickupDate,
+                    pickupTime,
+                    deliveryDate,
+                    deliveryTime,
+                    driverLicenseNumber
+            );
+        
+        if(!b.isValid())
+            return -1;
+        
+        bookings.add(b);
+
+        String json = gson.toJson(bookings);
+        System.out.println("JSON\n" + json);
+        FileWriter writer = null;
+        try {
+            writer = new FileWriter(new File("C:\\Users\\Jonas Borg Petersen\\Documents\\bookings.json"), false);
+            writer.write(json);
+        } catch (Exception e) {
+            return -1;
+        } finally {
+            writer.close();
+        }
+        
+        return id;
     }
 
 }

@@ -21,7 +21,7 @@ public class Controller {
         return DataAccess.DBFacade.checkCars(pickupCity,deliverCity,pickUpDate,deliveryDate,pickUpTime,deliveryTime);
     }
 
-    static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) {
+    static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) throws IOException {
         return DataAccess.DBFacade.makeBooking(pickupDate,deliveryDate,pickupTime,deliveryTime,pickupStationId,deliveryStationId,rentalCarId,driverLicenseNumber,driverName);
     }
     

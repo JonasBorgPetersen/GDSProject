@@ -23,7 +23,7 @@ public class BookingFacade {
     
     public int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, 
             Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, 
-            String driverLicenseNumber, String driverName){
+            String driverLicenseNumber, String driverName) throws IOException{
         
         return Controller.makeBooking(pickupDate,deliveryDate,pickupTime,deliveryTime,pickupStationId,deliveryStationId,rentalCarId,driverLicenseNumber,driverName);
     }

@@ -7,6 +7,7 @@ package Booking;
 
 import java.sql.Time;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -69,5 +70,21 @@ public class Booking {
 
     public void setDeliveryTime(Time deliveryTime) {
         this.deliveryTime = deliveryTime;
+    }
+    
+    public boolean isValid(){
+        
+        if(this.deliveryDate.before(this.pickUpDate))
+            return false;
+        if(this.pickUpDate.equals(this.deliveryDate))
+            if(this.deliveryTime.before(this.pickUpTime))
+                return false;
+        
+        long diff = deliveryDate.getTime() - pickUpDate.getTime();
+        
+        if((TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS)) > 21)
+            return false;
+
+        return true;
     }
 }
