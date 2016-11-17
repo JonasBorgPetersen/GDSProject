@@ -54,7 +54,7 @@ public class BookingFacadeTest {
     // @Test
     // public void hello() {}
     
-    @Ignore
+    //@Ignore
     @Test
     public void GetRentalCarsTest() throws IOException, ParseException {
         DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
@@ -65,41 +65,11 @@ public class BookingFacadeTest {
         Booking.BookingFacade bf = new BookingFacade();
 
         List<Booking.RentalCar> rc = new ArrayList<>();
-        rc = bf.checkCars("Copenhagen", "Copenhagen", pickUpDate, deliverDate, pickUpTime, deliverTime);
-        System.out.println("Final list size: " + rc.size());
-        assertNotNull(rc);
-    }
-
-    @Ignore
-    @Test
-    public void DateTest() throws ParseException {
-        String stringDate = "1-11-2016 00:00:00";
-
-        DateFormat format = new SimpleDateFormat("dd-mm-YYYY hh:mm:ss");
-
-        Date newDate = format.parse(stringDate);
-
-        System.out.println("newDate: " + newDate.toString());
-
-    }
-
-    @Ignore
-    @Test
-    public void TimeTest() throws ParseException {
-        String stringTime = "06:00:00";
-        DateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
-        
-        long ms = timeFormat.parse(stringTime).getTime();
-        
-        Time t = new Time(ms);
-        System.out.println("New time: " + t);
-        
-//        Time.parse(stringTime);
-//
-//        System.out.println("newDate: " + Time.parse(stringTime));
-
+        rc = bf.checkCars("Copenhagen", "Copenhagen", pickUpDate, deliverDate, pickUpTime, deliverTime); 
+        assertEquals(rc.size(), 2);
     }
     
+    @Ignore
     @Test
     public void TestMakeBooking() throws IOException{
         BookingFacade bookingFacade = new BookingFacade();

@@ -10,9 +10,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -33,6 +30,7 @@ public class DBFacade {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         DateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
 
+        //Getting rentalcars from "DB"
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\s_eng\\Desktop\\jsonPath\\RentalCar.txt"))) {
             for (String line; (line = br.readLine()) != null;) {
                 String[] s = line.split(",");
@@ -41,6 +39,7 @@ public class DBFacade {
             }
         }
 
+        //Getting bookings from "DB"
         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\s_eng\\Desktop\\jsonPath\\Booking.txt"))) {
             for (String line; (line = br.readLine()) != null;) {
                 String[] s = line.split(",");
@@ -61,16 +60,13 @@ public class DBFacade {
             RentalCar rc = i.next();
             for (Booking booking : bookings) {
                 if (rc.licenseplateNumber.trim().equals(booking.licensePlateNumber.trim())) {
-                    if (pickUpDate.after(booking.pickUpDate) && pickUpDate.before(booking.deliveryDate)) {
+                    if (pickUpDate.before(booking.deliveryDate) && booking.pickUpDate.before(deliveryDate)) {
                         i.remove();
-                    } else if (pickUpDate.before(booking.pickUpDate) && deliveryDate.after(booking.deliveryDate)) {
-                        i.remove();
+                        break;
                     }
                 }
             }
         }
-
-        //query database and return result
         return rentalCars;
     }
 
@@ -88,19 +84,20 @@ public class DBFacade {
 
         id = (int) (Math.random() * 100);
 
-        Booking b = 
-            new Booking(
-                    id,
-                    pickupDate,
-                    pickupTime,
-                    deliveryDate,
-                    deliveryTime,
-                    driverLicenseNumber
-            );
-        
-        if(!b.isValid())
+        Booking b
+                = new Booking(
+                        id,
+                        pickupDate,
+                        pickupTime,
+                        deliveryDate,
+                        deliveryTime,
+                        driverLicenseNumber
+                );
+
+        if (!b.isValid()) {
             return -1;
-        
+        }
+
         bookings.add(b);
 
         String json = gson.toJson(bookings);
@@ -114,7 +111,7 @@ public class DBFacade {
         } finally {
             writer.close();
         }
-        
+
         return id;
     }
 
