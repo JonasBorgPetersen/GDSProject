@@ -30,8 +30,7 @@ public class DBFacade {
         DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         DateFormat timeFormat = new SimpleDateFormat("hh:mm:ss");
 
-        //Getting rentalcars from "DB"
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\s_eng\\Desktop\\jsonPath\\RentalCar.txt"))) {
+         try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jonas Borg Petersen\\Documents\\RentalCar.txt"))) {
             for (String line; (line = br.readLine()) != null;) {
                 String[] s = line.split(",");
                 RentalCar car = new RentalCar(Integer.parseInt(s[0]), s[1]);
@@ -39,10 +38,10 @@ public class DBFacade {
             }
         }
 
-        //Getting bookings from "DB"
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\s_eng\\Desktop\\jsonPath\\Booking.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\Jonas Borg Petersen\\Documents\\Booking.txt"))) {
             for (String line; (line = br.readLine()) != null;) {
                 String[] s = line.split(",");
+
 
                 //Convert string to sql.Time
                 long newPickUpTime = timeFormat.parse(s[2]).getTime();
@@ -70,10 +69,25 @@ public class DBFacade {
         return rentalCars;
     }
 
-    public static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) throws IOException {
+    public static int makeBooking(Date pickupDate, Date deliveryDate, Time pickupTime, Time deliveryTime, int pickupStationId, 
+            int deliveryStationId, int rentalCarId, String driverLicenseNumber, String driverName) throws IOException {
+
+        int id = (int) (Math.random() * 100);
+        
+        Booking b = 
+            new Booking(
+                id,
+                pickupDate,
+                pickupTime,
+                deliveryDate,
+                deliveryTime,
+                driverLicenseNumber
+            );
+
+        if (!b.isValid())
+            return -1;
 
         ArrayList<Booking> bookings;
-        int id = -1;
 
         try {
             bookings = new ArrayList<Booking>(Arrays.asList(gson.fromJson(new FileReader("C:\\Users\\Jonas Borg Petersen\\Documents\\bookings.json"), Booking[].class)));
@@ -81,27 +95,11 @@ public class DBFacade {
         } catch (Exception e) {
             bookings = new ArrayList<Booking>();
         }
-
-        id = (int) (Math.random() * 100);
-
-        Booking b
-                = new Booking(
-                        id,
-                        pickupDate,
-                        pickupTime,
-                        deliveryDate,
-                        deliveryTime,
-                        driverLicenseNumber
-                );
-
-        if (!b.isValid()) {
-            return -1;
-        }
-
+        
         bookings.add(b);
 
         String json = gson.toJson(bookings);
-        System.out.println("JSON\n" + json);
+        
         FileWriter writer = null;
         try {
             writer = new FileWriter(new File("C:\\Users\\Jonas Borg Petersen\\Documents\\bookings.json"), false);
