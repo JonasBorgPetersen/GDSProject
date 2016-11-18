@@ -67,9 +67,10 @@ public class BookingFacadeTest {
         List<Booking.RentalCar> rc = new ArrayList<>();
         rc = bf.checkCars("Copenhagen", "Copenhagen", pickUpDate, deliverDate, pickUpTime, deliverTime); 
         assertEquals(rc.size(), 2);
+        
+        
     }
     
-    @Ignore
     @Test
     public void TestMakeBooking() throws IOException{
         BookingFacade bookingFacade = new BookingFacade();

@@ -19,7 +19,7 @@ public class RentalCar {
     public RentalCar(int id, String licenseplateNumber) {
         this.id = id;
         this.licenseplateNumber = licenseplateNumber;
-//        this.typeName = typeName;
+//z        this.typeName = typeName;
     }
 
     public int getId() {
@@ -51,4 +51,15 @@ public class RentalCar {
     
 }
 
-enum typeName {A, B, C, D, E, F};
+enum typeName {
+    A("a"), 
+    B("b"), 
+    C("c"), 
+    D("d"), 
+    E("e"), 
+    F("f");
+    private final String type;
+    private typeName(String type){
+        this.type = type;
+    }
+};
